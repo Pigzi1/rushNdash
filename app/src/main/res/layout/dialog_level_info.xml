@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_screen">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:text="LEVEL 1"
+        android:layout_gravity="center"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/tvLevel"/>
+
+    <!-- case 1: level locked -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/red"
+        android:text="Requirements:"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/tvShowReq"
+        android:visibility="gone"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="........"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/tvReq"
+        android:visibility="gone"
+        />
+
+    <!-- case 2: level unlocked -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/white"
+        android:text="........"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/tvScoreOrTime"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_black"
+            android:text="Close"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ahronbd"
+            android:textSize="17sp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/btClose"/>
+        <!-- will appear in case 2 -->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_black"
+            android:text="Play"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ahronbd"
+            android:textSize= "17sp"
+            android:id="@+id/btPlay"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- will appear in case 2 -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="18dp"
+        android:background="@drawable/button_blue"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="Song: "
+        android:fontFamily="@font/franklin"
+        android:id="@+id/btSong"
+        android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name"><![CDATA[Rush & Dash]]></string>
+    <string name="game_name"><![CDATA[RUSH & DASH]]></string>
+    <string name="score">Total Score: 0</string>
+    <string name="title">example for title</string>
+    <string name="subtitle">example for subtitle</string>
+    <string name="price">price</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome to the shop</string>
+    <string name="nav_header_subtitle">Purchase new items and upgrades here.</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_preview">Preview</string>
+    <string name="menu_inventory">Inventory</string>
+    <string name="menu_icon">Icon</string>
+    <string name="menu_background">Background</string>
+    <string name="menu_bonus">Bonus</string>
+    <string name="menu_power_up">Power Up</string>
+    <string name="shop_header">Shop</string>
+</resources>

@@ -1,0 +1,1005 @@
+@startuml
+
+title __APLIC's Class Diagram__\n
+
+  namespace com.example.aplic {
+    class com.example.aplic.GamePanel {
+        - bitmapBackground : Bitmap
+        - bonusID : int
+        - bonusPaint : Paint
+        - bonusString : String
+        - bonusTextDraw : boolean
+        - context : Context
+        - counter : int
+        - extraScore : int
+        - gameOver : boolean
+        - isNotNormalSpeed : boolean
+        - levelID : int
+        - levelType : String
+        - rnd : Random
+        - score : int
+        - scorePaint : Paint
+        - time : String
+        + GamePanel()
+        + backgroundDrawer()
+        + checkBonusIDValidity()
+        + createBonus()
+        + dialogMaker()
+        + draw()
+        {static} + drawBitmap()
+        + finishGame()
+        + getGameSensors()
+        + getObstacleArrayManager()
+        + getPlayer()
+        + getPowerUp()
+        + getSFX()
+        + isNotNormalSpeed()
+        + onTouchEvent()
+        + reduceTimeByOneSecond()
+        + scoreUpdater()
+        + setNotNormalSpeed()
+        + surfaceChanged()
+        + surfaceCreated()
+        + surfaceDestroyed()
+        + update()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.GameSensors {
+        - sensorManager : SensorManager
+        - xRotation : float
+        + GameSensors()
+        + getXRotation()
+        + onAccuracyChanged()
+        + onSensorChanged()
+        + stopSensors()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.MainThread {
+        {static} + MAX_FPS : int
+        + averageFPS : double
+        {static} + canvas : Canvas
+        - running : boolean
+        - surfaceHolder : SurfaceHolder
+        + MainThread()
+        + run()
+        + setRunning()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ObstacleArray {
+        - context : Context
+        - id : int
+        - obstArr : RectGame[]
+        + ObstacleArray()
+        + changeSpeed()
+        + collision()
+        + draw()
+        + makeNewInstance()
+        + update()
+        - setIdFromClass()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ObstacleArrayManager {
+        - context : Context
+        - levelID : int
+        - obstList : ArrayList<ObstacleArray>
+        - randomClass : int
+        + ObstacleArrayManager()
+        + addArrToList()
+        + changeSleepFromDifficulty()
+        + changeSpeedAll()
+        + collisionAll()
+        + drawAll()
+        + getArrayFromLevelID()
+        + getClassFromLevel()
+        + getSleepFromType()
+        + setArray()
+        + setRndNum()
+        + updateAll()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ObstacleThread {
+        - running : boolean
+        + ObstacleThread()
+        + run()
+        + setRunning()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.PowerUp {
+        - context : Context
+        - ibPowerUp : ImageButton
+        - imageDisplayID : int
+        - retries : int
+        - time : int
+        - timeActive : int
+        - timeCoolDown : int
+        - tvPowerUpCoolDown : TextView
+        + PowerUp()
+        + onClick()
+        + powerActivated()
+        + restartPowerUpTimer()
+        + setPowerUpTextColor()
+        + setTimesFromType()
+        + startTime()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.SFX {
+        - bonus_neg : int
+        - bonus_pos : int
+        - death : int
+        - explosion : int
+        - soundPool : SoundPool
+        + SFX()
+        + playSound()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ScoreThread {
+        - running : boolean
+        + ScoreThread()
+        + run()
+        + setRunning()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ShopItem {
+        - bitmap : Bitmap
+        - owned : boolean
+        - price : int
+        - title : String
+        + ShopItem()
+        + getBitmap()
+        + getPrice()
+        + getTitle()
+        + isOwned()
+        + setOwned()
+        + turnIDToBitmap()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.ShopItemAdapter {
+        - context : Context
+        - objects : List<ShopItem>
+        - tag : String
+        - tvPrice : TextView
+        + ShopItemAdapter()
+        + getView()
+        + updateTextColor()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.Statics {
+        {static} + height : int
+        {static} + user : User
+        {static} + width : int
+        {static} + isConnectedToInternet()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.User {
+        + backgroundOwned : ArrayList<Boolean>
+        + bestTime : List<String>
+        + bonusOwned : ArrayList<Boolean>
+        + coins : int
+        + deaths : int
+        + difficulty : int
+        + hsl : List<Integer>
+        + iconOwned : ArrayList<Boolean>
+        + itemsOwned : int
+        + key : String
+        + levelComplete : ArrayList<Boolean>
+        + mail : String
+        + optFPS : boolean
+        + optMusic : boolean
+        + optSoundEffects : boolean
+        + powerUpOwned : ArrayList<Boolean>
+        + selectedBackground : int
+        + selectedBonus : int
+        + selectedIcon : int
+        + selectedPowerUp : int
+        + uid : String
+        + userName : String
+        + InitializeAllValues()
+        + User()
+        + User()
+    }
+  }
+  
+
+  namespace com.example.aplic {
+    class com.example.aplic.VibrationService {
+        - vibrator : Vibrator
+        + VibrationService()
+        + onBind()
+        + onDestroy()
+        + onStartCommand()
+    }
+  }
+
+
+
+
+
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.AlphaObj {
+            - initVelY : float
+            + AlphaObj()
+            + changeAlpha()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.BonusObj {
+            ~ handler : Handler
+            - lowestY : int
+            - status : int
+            + BonusObj()
+            + changeVelocities()
+            + draw()
+            + respawn()
+            + setRandomPoint()
+            + setSleepTime()
+            + setStatus()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.BounceObj {
+            - touchedBottom : boolean
+            + BounceObj()
+            + changeVelocities()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.CrossingObj {
+            - movingDirection : int
+            - rect1 : Rect
+            - rect2 : Rect
+            + CrossingObj()
+            + changeVelocities()
+            + collision()
+            + draw()
+            + setRectangles()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.CrossingSingleObj {
+            - makeRandomVelX : float
+            - movingDirection : int
+            + CrossingSingleObj()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.DownUpObj {
+            - touchedBottom : boolean
+            + DownUpObj()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.GapObj {
+            - rect1 : Rect
+            - rect2 : Rect
+            + GapObj()
+            + changeVelocities()
+            + collision()
+            + draw()
+            + setRectangles()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.MovingGapObj {
+            - movingDirection : int
+            + MovingGapObj()
+            + changeVelocities()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.MovingRectObj {
+            - alreadyChecked : boolean
+            - horizontalMovement : int
+            - rndFX : float
+            - rndFY : float
+            - type : int
+            + MovingRectObj()
+            + changeVelocities()
+            + draw()
+            + setDiagonalVelocity()
+            + setHorizontalVelocity()
+            + setVerticalVelocity()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.Player {
+            + Player()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.PointGame {
+            # initialSpeed : int
+            # speed : int
+            # velX : float
+            # velY : float
+            + PointGame()
+            + getSpeed()
+            + getVelX()
+            + getVelY()
+            + setSpeed()
+            + setSpeedFromDifficulty()
+            + setVelX()
+            + setVelY()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.PositionSensorObj {
+            + PositionSensorObj()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        abstract class com.example.aplic.objects.RectGame {
+            # bitmap : Bitmap
+            # context : Context
+            # height : int
+            # paint : Paint
+            # rect : Rect
+            # rnd : Random
+            # width : int
+            + RectGame()
+            + RectGame()
+            + changeSpeed()
+            {abstract} + changeVelocities()
+            + collision()
+            {abstract} + draw()
+            + getHeight()
+            + getPointGame()
+            + getRectangle()
+            + getWidth()
+            + kill()
+            + moveObst()
+            + setHeight()
+            + setRect()
+            + setWidth()
+            {abstract} + update()
+        }
+      }
+    }
+
+
+    namespace com.example.aplic {
+      namespace objects {
+        class com.example.aplic.objects.WarningObj {
+            - soundPlayed : boolean
+            - status : int
+            - warning : Bitmap
+            + WarningObj()
+            + changeVelocities()
+            + draw()
+            + update()
+        }
+      }
+    }
+
+
+
+
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.BossLevelCompleteDialog {
+              - btBack : Button
+              - context : Context
+              - levelID : int
+              - tvWorldUnlocked : TextView
+              + BossLevelCompleteDialog()
+              + onClick()
+              + setWorldUnlocked()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.DemoGameOverDialog {
+              - btBack : Button
+              - context : Context
+              + DemoGameOverDialog()
+              + onClick()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.DifficultyDialog {
+              - btConfirm : Button
+              - btEasy : Button
+              - btHard : Button
+              - btNormal : Button
+              - context : Context
+              - diff : int
+              - tvDisplay : TextView
+              + DifficultyDialog()
+              + onClick()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.GameOverDialog {
+              - btBack : Button
+              - btRetry : Button
+              - context : Context
+              - levelID : int
+              - score : int
+              - time : String
+              - tvNewHighScore : TextView
+              + GameOverDialog()
+              + displayNewMessage()
+              + isBestTime()
+              + onClick()
+              + tryToSetNewProgression()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.LevelInfoDialog {
+              - bitmapArrays : Bundle
+              - btClose : Button
+              - btPlay : Button
+              - btSong : Button
+              - context : Context
+              - levelID : int
+              + LevelInfoDialog()
+              + isPrevHighScoreOrCompleted()
+              + onClick()
+              + requirements()
+              + scoreReq()
+              + setBossLevelText()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.ObstInfoDialog {
+              - context : Context
+              - obstaclesList : LinearLayout
+              - tvDesc : TextView
+              - tvTitle : TextView
+              + ObstInfoDialog()
+              + getColor()
+              + setInfoDesc()
+              + setInfoTitle()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.PurchaseConfirmDialog {
+              - btClose : Button
+              - btConfirm : Button
+              - context : Context
+              - position : int
+              - tag : String
+              - userRef : DatabaseReference
+              + PurchaseConfirmDialog()
+              + buyItem()
+              + onClick()
+              # onCreate()
+          }
+        }
+      }
+
+
+      namespace com.example.aplic {
+        namespace dialogs {
+          class com.example.aplic.dialogs.ShopInfoDialog {
+              - type : String
+              + ShopInfoDialog()
+              # onCreate()
+          }
+        }
+      }
+
+
+
+
+
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.ForgotActivity {
+                - auth : FirebaseAuth
+                - btChange : Button
+                - email : String
+                - etMail : EditText
+                - etName : EditText
+                - ibBack : ImageButton
+                - userRef : DatabaseReference
+                + onCancelled()
+                + onClick()
+                + onDataChange()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.GameScreenActivity {
+                - backgroundImages : int[]
+                - bonusImages : int[]
+                - connectivityChangeReceiver : BroadcastReceiver
+                - frameLayout : FrameLayout
+                - ibBack : ImageButton
+                - iconImages : int[]
+                - ivConnection : ImageView
+                - levelID : int
+                - mediaPlayer : MediaPlayer
+                - powerUpImages : int[]
+                - retryCount : int
+                - tvFPS : TextView
+                - tvLoading : TextView
+                + addGamePanel()
+                + changeConnectionErrorVisibility()
+                + getBitmapID()
+                + getGamePanel()
+                + getLevelID()
+                + getPowerUpImages()
+                + getRetryCount()
+                + onClick()
+                + onRetry()
+                + playMusic()
+                + prepareMusic()
+                + setFPSView()
+                + stopMusic()
+                # onCreate()
+                # onPause()
+                # onResume()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.HubActivity {
+                - bitmapArrays : Bundle
+                - btOptions : Button
+                - btPlay : Button
+                - btRankings : Button
+                - btShop : Button
+                - btSignOut : Button
+                + onClick()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.LevelSelectActivity {
+                - btBoss : Button
+                - btDifficulty : Button
+                - btL1 : Button
+                - btL2 : Button
+                - btL3 : Button
+                - btL4 : Button
+                - btObstInfo : Button
+                - frameLayout : FrameLayout
+                - ibBack : ImageButton
+                - ibBackArrow : ImageButton
+                - ibForwardArrow : ImageButton
+                - tvWorldDisplay : TextView
+                - worldNum : int
+                + changeWorld()
+                + difficultyColor()
+                + onClick()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.LoginActivity {
+                - btForgot : Button
+                - btLogin : Button
+                - btNew : Button
+                - btQuit : Button
+                - cbSharedPreferences : CheckBox
+                - etMail : EditText
+                - etName : EditText
+                - etPass : EditText
+                - firebaseAuth : FirebaseAuth
+                - intent : Intent
+                - loading : GifImageView
+                - mail : String
+                - password : String
+                - sp : SharedPreferences
+                - tvNotSignIn : TextView
+                - userName : String
+                - userRef : DatabaseReference
+                + changeClickables()
+                + checkLoginInformation()
+                + loginAccount()
+                + onCancelled()
+                + onClick()
+                + onDataChange()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.OptionsActivity {
+                - FPS : boolean
+                - btBack : Button
+                - btReset : Button
+                - btSave : Button
+                - music : boolean
+                - soundEffects : boolean
+                - switchFPS : SwitchMaterial
+                - switchMusic : SwitchMaterial
+                - switchSoundEffects : SwitchMaterial
+                - userRef : DatabaseReference
+                + onCheckedChanged()
+                + onClick()
+                + setSwitches()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.RankingsActivity {
+                - deathHeader : TableRow
+                - deathRows : List<String[]>
+                - itemHeader : TableRow
+                - itemRows : List<String[]>
+                - scoreHeader : TableRow
+                - scoreRows : List<String[]>
+                - tableLayout : TableLayout
+                - userList : List<User>
+                - userRef : DatabaseReference
+                + onCancelled()
+                + onDataChange()
+                + onItemSelected()
+                + onNothingSelected()
+                + scoreSum()
+                + setHeader()
+                + setLists()
+                + setSpinner()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.ShopActivity {
+                - bitmapArrays : Bundle
+                - fragmentManager : FragmentManager
+                - fragmentTransaction : FragmentTransaction
+                + onBackPressed()
+                + onNavigationItemSelected()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.SignUpActivity {
+                - btSignUp : Button
+                - confPassword : String
+                - etConfPass : EditText
+                - etMail : EditText
+                - etName : EditText
+                - etPass : EditText
+                - firebaseAuth : FirebaseAuth
+                - firebaseDatabase : FirebaseDatabase
+                - ibBack : ImageButton
+                - mail : String
+                - password : String
+                - userName : String
+                - userRef : DatabaseReference
+                + addUserDetails()
+                + onCancelled()
+                + onClick()
+                + onDataChange()
+                + signUp()
+                # onCreate()
+            }
+          }
+        }
+
+
+        namespace com.example.aplic {
+          namespace activities {
+            class com.example.aplic.activities.SplashScreenActivity {
+                # onCreate()
+            }
+          }
+        }
+
+
+
+
+
+
+
+          namespace com.example.aplic {
+            namespace activities {
+              namespace ShopFragments {
+                class com.example.aplic.activities.ShopFragments.InventoryFragment {
+                    + InventoryFragment()
+                    + onCreateView()
+                }
+              }
+            }
+          }
+
+
+          namespace com.example.aplic {
+            namespace activities {
+              namespace ShopFragments {
+                class com.example.aplic.activities.ShopFragments.PreviewFragment {
+                    + PreviewFragment()
+                    + onCreateView()
+                }
+              }
+            }
+          }
+
+
+          namespace com.example.aplic {
+            namespace activities {
+              namespace ShopFragments {
+                class com.example.aplic.activities.ShopFragments.ShopBuyFragment {
+                    - context : Context
+                    - lvShop : ListView
+                    - tag : String
+                    - tvCoins : TextView
+                    - userRef : DatabaseReference
+                    + ShopBuyFragment()
+                    + onCreateView()
+                    + onItemClick()
+                    + setCoinsDisplay()
+                    + setSelectedView()
+                    + updateTextColor()
+                }
+              }
+            }
+          }
+
+
+
+
+
+
+
+
+
+
+
+  com.example.aplic.GamePanel .up.|> android.view.SurfaceHolder.Callback
+  com.example.aplic.GamePanel -up-|> android.view.SurfaceView
+  com.example.aplic.GamePanel o-- com.example.aplic.objects.BonusObj : bonusObj
+  com.example.aplic.GamePanel o-- com.example.aplic.GameSensors : gameSensors
+  com.example.aplic.GamePanel o-- com.example.aplic.ObstacleArrayManager : obstacleArrayManager
+  com.example.aplic.GamePanel o-- com.example.aplic.ObstacleThread : obstacleThread
+  com.example.aplic.GamePanel o-- com.example.aplic.objects.Player : player
+  com.example.aplic.GamePanel o-- com.example.aplic.PowerUp : powerUp
+  com.example.aplic.GamePanel o-- com.example.aplic.ScoreThread : scoreThread
+  com.example.aplic.GamePanel o-- com.example.aplic.SFX : sfx
+  com.example.aplic.GamePanel o-- com.example.aplic.MainThread : thread
+  com.example.aplic.GameSensors .up.|> android.hardware.SensorEventListener
+  com.example.aplic.MainThread o-- com.example.aplic.GamePanel : gamePanel
+  com.example.aplic.ObstacleThread o-- com.example.aplic.GamePanel : gamePanel
+  com.example.aplic.PowerUp .up.|> android.view.View.OnClickListener
+  com.example.aplic.PowerUp o-- com.example.aplic.GamePanel : gamePanel
+  com.example.aplic.ScoreThread o-- com.example.aplic.GamePanel : gamePanel
+  com.example.aplic.ShopItemAdapter -up-|> android.widget.ArrayAdapter
+  com.example.aplic.VibrationService -up-|> android.app.Service
+
+  com.example.aplic.objects.AlphaObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.BonusObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.BounceObj -up-|> com.example.aplic.objects.CrossingSingleObj
+  com.example.aplic.objects.CrossingObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.CrossingSingleObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.DownUpObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.GapObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.MovingGapObj -up-|> com.example.aplic.objects.GapObj
+  com.example.aplic.objects.MovingRectObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.Player -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.PointGame -up-|> android.graphics.Point
+  com.example.aplic.objects.PositionSensorObj -up-|> com.example.aplic.objects.RectGame
+  com.example.aplic.objects.RectGame o-- com.example.aplic.objects.PointGame : pointGame
+  com.example.aplic.objects.WarningObj -up-|> com.example.aplic.objects.RectGame
+
+  com.example.aplic.dialogs.BossLevelCompleteDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.BossLevelCompleteDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.DemoGameOverDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.DemoGameOverDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.DifficultyDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.DifficultyDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.GameOverDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.GameOverDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.GameOverDialog o-- com.example.aplic.activities.GameScreenActivity : activity
+  com.example.aplic.dialogs.LevelInfoDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.LevelInfoDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.ObstInfoDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.PurchaseConfirmDialog .up.|> android.view.View.OnClickListener
+  com.example.aplic.dialogs.PurchaseConfirmDialog -up-|> android.app.Dialog
+  com.example.aplic.dialogs.PurchaseConfirmDialog o-- com.example.aplic.activities.ShopFragments.ShopBuyFragment : frag
+  com.example.aplic.dialogs.PurchaseConfirmDialog o-- com.example.aplic.ShopItem : shopItem
+  com.example.aplic.dialogs.ShopInfoDialog -up-|> android.app.Dialog
+
+  com.example.aplic.activities.ForgotActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.ForgotActivity .up.|> com.google.firebase.database.ValueEventListener
+  com.example.aplic.activities.ForgotActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.GameScreenActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.GameScreenActivity -up-|> android.app.Activity
+  com.example.aplic.activities.GameScreenActivity o-- com.example.aplic.GamePanel : gamePanel
+  com.example.aplic.activities.HubActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.HubActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.LevelSelectActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.LevelSelectActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.LoginActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.LoginActivity .up.|> com.google.firebase.database.ValueEventListener
+  com.example.aplic.activities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.OptionsActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.OptionsActivity .up.|> android.widget.CompoundButton.OnCheckedChangeListener
+  com.example.aplic.activities.OptionsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.RankingsActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.aplic.activities.RankingsActivity .up.|> com.google.firebase.database.ValueEventListener
+  com.example.aplic.activities.RankingsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.ShopActivity .up.|> com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+  com.example.aplic.activities.ShopActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.SignUpActivity .up.|> android.view.View.OnClickListener
+  com.example.aplic.activities.SignUpActivity .up.|> com.google.firebase.database.ValueEventListener
+  com.example.aplic.activities.SignUpActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.aplic.activities.SplashScreenActivity -up-|> androidx.appcompat.app.AppCompatActivity
+
+  com.example.aplic.activities.ShopFragments.InventoryFragment -up-|> androidx.fragment.app.Fragment
+  com.example.aplic.activities.ShopFragments.PreviewFragment -up-|> androidx.fragment.app.Fragment
+  com.example.aplic.activities.ShopFragments.ShopBuyFragment .up.|> android.widget.AdapterView.OnItemClickListener
+  com.example.aplic.activities.ShopFragments.ShopBuyFragment -up-|> androidx.fragment.app.Fragment
+  com.example.aplic.activities.ShopFragments.ShopBuyFragment o-- com.example.aplic.ShopItemAdapter : shopItemAdapter
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3C3842">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Difficulty"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/franklin"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#8032FF32"
+            android:text="EASY"
+            android:textSize="16sp"
+            android:fontFamily="@font/ahronbd"
+            android:id="@+id/btEasy" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#B1610B"
+            android:text="NORMAL"
+            android:textSize="16sp"
+            android:fontFamily="@font/ahronbd"
+            android:id="@+id/btNormal" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#99EA0B0B"
+            android:text="HARD"
+            android:textSize="16sp"
+            android:fontFamily="@font/ahronbd"
+            android:id="@+id/btHard" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/ahronbd"
+        android:id="@+id/tvDisplay"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Confirm"
+        android:backgroundTint="#00BCD4"
+        android:textSize="16sp"
+        android:fontFamily="@font/ahronbd"
+        android:id="@+id/btConfirm"/>
+</LinearLayout>

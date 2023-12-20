@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "385602365294",
+    "project_id": "aplic-1",
+    "storage_bucket": "aplic-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385602365294:android:848ee906005622f613437f",
+        "android_client_info": {
+          "package_name": "com.example.aplic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385602365294-66p3m5uorp33fmnpnoorl267gt8fuisb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqEvBXvAtkvxQ72N6ISNNQ_-33_lZ87nQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385602365294-66p3m5uorp33fmnpnoorl267gt8fuisb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

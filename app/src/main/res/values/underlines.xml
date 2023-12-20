@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_up"> <u>Create New Account:</u></string>
+    <string name="forgot_password"> <u>Create New Password:</u></string>
+    <string name="options_title"> <u>OPTIONS</u></string>
+    <string name="playWithoutSigningIn"> <u>play without signing in</u></string>
+    <string name="title_activity_shop"><u>Shop</u></string>
+    <string name="rankings"> <u>Rankings</u></string>
+    <string name="ranking_type"> <u>Ranking type:</u></string>
+    <string name="shop"> <u>SHOP</u></string>
+    <string name="buy"> <u>BUY</u></string>
+    <string name="confirm_purchase"> <u>Confirm Purchase</u></string>
+    <string name="preview"> <u>PREVIEW</u></string>
+    <string name="inventory"> <u>INVENTORY</u></string>
+    <string name="icon"> <u>Icon:</u></string>
+    <string name="background"> <u>Background:</u></string>
+    <string name="bonus"> <u>Bonus:</u></string>
+    <string name="power_up"> <u>Power Up:</u></string>
+
+    <string name="alpha"> <u>Alpha Obstacles</u></string>
+    <string name="diagonal"> <u>Diagonal Obstacles</u></string>
+    <string name="vertical"> <u>Vertical Obstacles</u></string>
+    <string name="horizontal"> <u>Horizontal Obstacles</u></string>
+    <string name="gap"> <u>Gap Obstacles</u></string>
+    <string name="warning"> <u>Warning Obstacle</u></string>
+    <string name="floor"> <u>Floor bouncing Obstacles</u></string>
+    <string name="moving_gap"> <u>Moving Gap Obstacle</u></string>
+    <string name="cross"> <u>Crossing Obstacles</u></string>
+    <string name="wall"> <u>Wall bouncing Obstacles</u></string>
+    <string name="wall_floor"> <u>Wall and Floor Bouncing Obstacles</u></string>
+    <string name="sensor"> <u>Movement Sensor Obstacle</u></string>
+
+</resources>

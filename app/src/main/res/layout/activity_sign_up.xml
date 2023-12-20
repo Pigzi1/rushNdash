@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity"
+    android:orientation="vertical"
+    android:background="@drawable/border_login">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/go_back"
+        android:background="@null"
+        android:id="@+id/ibBack"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textSize="35sp"
+        android:textColor="#291A1A"
+        android:fontFamily="@font/franklin"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:layout_gravity="left"
+        android:hint="Enter user name: "
+        android:fontFamily="@font/franklin"
+        android:id="@+id/etNewName"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:layout_gravity="left"
+        android:hint="Enter E-Mail account: "
+        android:fontFamily="@font/franklin"
+        android:id="@+id/etNewMail"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:layout_gravity="left"
+        android:hint="Enter password: "
+        android:inputType="textPassword"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/etNewPass"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:layout_gravity="left"
+        android:hint="Confirm password: "
+        android:inputType="textPassword"
+        android:fontFamily="@font/franklin"
+        android:id="@+id/etConfNewPass"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_black"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:fontFamily="@font/ahronbd"
+        android:text="Add New \n User"
+        android:id="@+id/btSignUp"
+        />
+
+</LinearLayout>

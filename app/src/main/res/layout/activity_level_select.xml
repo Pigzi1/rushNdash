@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LevelSelectActivity"
+    android:background="@color/black"
+    >
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:background="#696969"
+        android:id="@+id/frameLayout">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/go_back"
+            android:background="@null"
+            android:id="@+id/ibBack"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_margin="15dp"
+            android:layout_gravity="bottom"
+            tools:ignore="RtlHardcoded"
+            android:background="#99242832"
+            android:text="Obstacles Information"
+            android:textColor="@color/white"
+            android:fontFamily="@font/franklin"
+            android:textSize="20sp"
+            android:id="@+id/btObstInfo"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_margin="15dp"
+            android:layout_gravity="right|bottom"
+            tools:ignore="RtlHardcoded"
+            android:background="#9900FF00"
+            android:text="difficulty: easy"
+            android:fontFamily="@font/franklin"
+            android:textSize="20sp"
+            android:id="@+id/btDifficulty"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:text="World 1"
+                android:fontFamily="@font/franklin"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="35dp"
+                android:textColor="@color/blue"
+                android:id="@+id/tvWorldDisplay"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:text="1"
+                        android:fontFamily="@font/franklin"
+                        android:textSize="40sp"
+                        android:id="@+id/ibLevel1"/>
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:text="2"
+                        android:fontFamily="@font/franklin"
+                        android:textSize="40sp"
+                        android:id="@+id/ibLevel2"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:text="3"
+                        android:fontFamily="@font/franklin"
+                        android:textSize="40sp"
+                        android:id="@+id/ibLevel3"/>
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:text="4"
+                        android:fontFamily="@font/franklin"
+                        android:textSize="40sp"
+                        android:id="@+id/ibLevel4"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp">
+
+                <ImageButton
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/level_select_back"
+                    android:background="@null"
+                    android:id="@+id/ibBackArrow"/>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:text="5"
+                    android:fontFamily="@font/franklin"
+                    android:textSize="80sp"
+                    android:background="#880707"
+                    android:id="@+id/ibBoss"/>
+
+                <ImageButton
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/level_select_forward"
+                    android:background="@null"
+                    android:id="@+id/ibForwardArrow"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>
